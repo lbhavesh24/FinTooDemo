@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userInfo">
+    <fragment
+        android:id="@+id/userInfo"
+        android:name="com.fintoo.demo.UserInfo"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_userInfo_to_knowYouBetter"
+            app:destination="@id/knowYouBetter"
+            app:popUpTo="@id/userInfo" />
+        <action
+            android:id="@+id/action_userInfo_to_knowYourRisk"
+            app:destination="@id/knowYourRisk" />
+        <action
+            android:id="@+id/action_userInfo_to_yourFamily"
+            app:destination="@id/yourFamily" />
+    </fragment>
+    <fragment
+        android:id="@+id/knowYouBetter"
+        android:name="com.fintoo.demo.KnowYouBetter"
+        android:label="fragment_know_you_better"
+        tools:layout="@layout/fragment_know_you_better" >
+        <action
+            android:id="@+id/action_knowYouBetter_to_knowYourRisk"
+            app:destination="@id/knowYourRisk" />
+        <action
+            android:id="@+id/action_knowYouBetter_to_userInfo"
+            app:destination="@id/userInfo"
+            app:popUpTo="@id/userInfo"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_knowYouBetter_to_yourFamily"
+            app:destination="@id/yourFamily" />
+    </fragment>
+    <fragment
+        android:id="@+id/knowYourRisk"
+        android:name="com.fintoo.demo.KnowYourRisk"
+        android:label="fragment_know_your_risk"
+        tools:layout="@layout/fragment_know_your_risk" >
+        <action
+            android:id="@+id/action_knowYourRisk_to_yourFamily"
+            app:destination="@id/yourFamily" />
+        <action
+            android:id="@+id/action_knowYourRisk_to_userInfo"
+            app:destination="@id/userInfo"
+            app:popUpTo="@id/userInfo"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_knowYourRisk_to_knowYouBetter"
+            app:destination="@id/knowYouBetter"
+            app:popUpTo="@id/knowYouBetter"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/yourFamily"
+        android:name="com.fintoo.demo.YourFamily"
+        android:label="fragment_your_family"
+        tools:layout="@layout/fragment_your_family" >
+        <action
+            android:id="@+id/action_yourFamily_to_userInfo"
+            app:destination="@id/userInfo"
+            app:popUpTo="@id/userInfo"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_yourFamily_to_knowYourRisk"
+            app:destination="@id/knowYourRisk"
+            app:popUpTo="@id/knowYourRisk"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_yourFamily_to_knowYouBetter"
+            app:destination="@id/knowYouBetter"
+            app:popUpTo="@id/knowYouBetter"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
